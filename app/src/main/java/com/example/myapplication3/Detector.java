@@ -287,10 +287,10 @@ public class Detector {
         Log.d("Detector", "Screen Center X: " + screenCenterX);
         Log.d("Detector", "Threshold: " + threshold);
 
-        if (maxArea == 0 || areaDifference < 0.25 * cameraArea) {
+        if (maxArea == 0 || areaDifference < 0.3 * cameraArea) {
             command = "S";
             BluetoothSingleton.getInstance().setCommand("S");
-        } else if (areaDifference > 0.25*cameraArea) {
+        } else if (areaDifference > 0.3*cameraArea) {
             if (boxCenterX > screenCenterX + threshold) {
                 command = "R";
                 BluetoothSingleton.getInstance().setCommand("R");

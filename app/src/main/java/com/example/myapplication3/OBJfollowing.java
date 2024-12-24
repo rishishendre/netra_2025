@@ -219,6 +219,7 @@ public class OBJfollowing extends AppCompatActivity implements Detector.Detector
 
         runOnUiThread(() -> {
             binding.inferenceTime.setText(inferenceTime + "ms");
+            binding.Command.setText(BluetoothSingleton.getInstance().getCommand());
             binding.overlay.setResults(boundingBoxes);
             binding.overlay.invalidate();
         });
