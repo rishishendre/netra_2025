@@ -1,0 +1,43 @@
+<!-- res/layout/bt_device_item.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Bluetooth Icon -->
+    <ImageView
+        android:id="@+id/bluetooth_icon"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="Bluetooth Icon"
+        android:src="@drawable/bluetoothblack" />
+
+    <!-- Device Name -->
+    <TextView
+        android:id="@+id/device_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textColor="#E6E3E3"
+        android:fontFamily="@font/aldrich"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="9dp"
+        android:text="Device Name"
+        android:textSize="20sp" />
+
+    <!-- Connect Button -->
+    <Button
+        android:id="@+id/connect_button"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:backgroundTint="#62825D"
+        android:fontFamily="@font/aldrich"
+        android:text="Connect"
+        android:textColor="#E6E3E3"
+        app:cornerRadius="10dp" />
+</LinearLayout>

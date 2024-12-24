@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Controller"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controller"
+    android:layout_marginHorizontal="30dp">
+
+    <!-- Button A -->
+
+    <!-- Button B -->
+
+    <!-- Button C -->
+
+    <!-- Button D -->
+
+    <!-- Button E -->
+
+    <!-- Joystick -->
+
+    <!-- Back Button -->
+
+    <!-- Status Text -->
+
+    <Button
+        android:id="@+id/Triangle"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#62825D"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/pstriangle"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="30dp"
+        app:iconTint="@color/iconTint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.824"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.275" />
+
+    <Button
+        android:id="@+id/reconnect"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#62825D"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/reconnect"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="45dp"
+        app:iconTint="@color/iconTint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.766" />
+
+    <Button
+        android:id="@+id/Cross"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#62825D"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/pscross"
+        app:iconGravity="textStart"
+        app:iconSize="35dp"
+        app:iconTint="@color/iconTint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.824"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.755" />
+
+    <Button
+        android:id="@+id/Sqaure"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#62825D"
+        app:cornerRadius="10dp"
+        android:text=""
+        app:iconGravity="textStart"
+        app:icon="@drawable/pssquare"
+        app:iconPadding="0dp"
+        app:iconSize="25dp"
+        app:iconTint="@color/iconTint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.708"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.51" />
+
+    <Button
+        android:id="@+id/Circle"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#62825D"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/pscircle"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="25dp"
+        app:iconTint="@color/iconTint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.51" />
+
+    <com.example.joystick_lib.Joystick_Lib
+        android:id="@+id/joystick_Lib"
+        android:layout_width="245dp"
+        android:layout_height="232dp"
+        android:backgroundTint="#FFFFFF"
+        app:JV_backgroundColor="#62825D"
+        app:JV_backgroundSizeRatio="95%"
+        app:JV_borderColor="#FFFFFF"
+        app:JV_borderWidth="4dp"
+        app:JV_buttonColor="#000000"
+        app:JV_buttonSizeRatio="30%"
+        app:JV_fixedCenter="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.541" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#62825D"
+        android:text="Back"
+        android:textColor="#E6E3E3"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/baseline_arrow_back_24"
+        app:iconTint="@color/iconTint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="377dp"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:text="Status"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046" />
+
+    <TextView
+        android:id="@+id/Cammand"
+        android:layout_width="98dp"
+        android:layout_height="63dp"
+        android:gravity="center"
+        android:text="Command"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Grip"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#62825D"
+        android:text="GRIP"
+        android:textColor="#E6E3E3"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/UnGrip"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:backgroundTint="#62825D"
+        android:text="UNGRIP"
+        android:textColor="#E6E3E3"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.979"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

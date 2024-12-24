@@ -1,0 +1,24 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape android:shape="ring">
+            <size android:width="48dp" android:height="48dp" />
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+    <item android:id="@android:id/secondaryProgress">
+        <rotate
+            android:fromDegrees="0"
+            android:toDegrees="360"
+            android:pivotX="50%"
+            android:pivotY="50%">
+            <shape android:shape="ring">
+                <size android:width="48dp" android:height="48dp" />
+                <gradient
+                    android:type="sweep"
+                    android:useLevel="false"
+                    android:startColor="@color/iconTint"
+                    android:endColor="@color/iconTint" />
+            </shape>
+        </rotate>
+    </item>
+</layer-list>
