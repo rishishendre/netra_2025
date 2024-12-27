@@ -16,7 +16,7 @@
         android:fontFamily="@font/aldrich"
         android:text="Back"
         android:textColor="#E6E3E3"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,13 +61,13 @@
             android:paddingLeft="50dp"
             android:text="MANUAL CONTROL"
             android:textColor="#E6E3E3"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/humanfollower"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="80dp"
         android:backgroundTint="#62825D"
         app:cardCornerRadius="10dp"
         android:layout_marginLeft="210dp"
@@ -82,9 +82,9 @@
         <ImageView
             android:id="@+id/person"
             android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:paddingTop="10dp"
-            android:paddingBottom="12dp"
+            android:layout_height="80dp"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
             android:paddingRight="12dp"
             android:layout_marginStart="8dp"
             app:srcCompat="@drawable/personblack" />
@@ -99,14 +99,14 @@
             android:layout_marginEnd="5dp"
             android:text="PERSON FOLLOWER"
             android:textColor="#E6E3E3"
-            android:textSize="15sp" />
+            android:textSize="13sp" />
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/colorfollower"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="80dp"
         android:backgroundTint="#62825D"
         app:cardCornerRadius="10dp"
         android:layout_marginLeft="30dp"
@@ -121,29 +121,28 @@
         <ImageView
             android:id="@+id/color"
             android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:paddingTop="5dp"
-            android:paddingHorizontal="8dp"
-            android:paddingVertical="1dp"
+            android:layout_height="80dp"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
             android:layout_marginLeft="10dp"
             app:srcCompat="@drawable/colorblack" />
 
         <TextView
             android:id="@+id/colorFollower"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="80dp"
             android:gravity="center"
             android:fontFamily="@font/aldrich"
             android:layout_marginStart="60dp"
             android:layout_marginEnd="5dp"
             android:text="COLOR FOLLOW"
             android:textColor="#E6E3E3"
-            android:textSize="15sp" />
+            android:textSize="13sp" />
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:id="@+id/Ocr"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="80dp"
         android:backgroundTint="#62825D"
         app:cardCornerRadius="10dp"
         android:layout_marginLeft="100dp"
@@ -158,16 +157,17 @@
         <ImageView
             android:id="@+id/ocricon"
             android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:paddingLeft="10dp"
-            android:paddingTop="5dp"
+            android:layout_height="80dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
             android:layout_marginStart="15dp"
-            app:srcCompat="@drawable/colorblack" />
+            app:srcCompat="@drawable/ocr" />
 
         <TextView
             android:id="@+id/ocrtext"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="80dp"
             android:gravity="center"
             android:layout_marginStart="0dp"
             android:layout_marginEnd="10dp"
@@ -175,25 +175,23 @@
             android:paddingLeft="30dp"
             android:text="OCR"
             android:textColor="#E6E3E3"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
     </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/welcome"
         android:layout_width="289dp"
         android:layout_height="123dp"
-        android:background="#62825D"
-        android:gravity="center"
         android:fontFamily="@font/aldrich"
+        android:gravity="center"
         android:text="Welcome \nOperator"
         android:textColor="#E6E3E3"
-        android:textSize="40sp"
+        android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.093" />
+        app:layout_constraintVertical_bias="0.062" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -86,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
         search = findViewById(R.id.imageView2);
         back = findViewById(R.id.backButton);
         if (OpenCVLoader.initDebug()) {
-
         }
         else{
             System.out.println("OPENCV LOADING FAILED");
@@ -96,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
             search.setImageResource(R.drawable.searchblack);
         }
         else{
-            search.setImageResource(R.drawable.search);
+            search.setImageResource(R.drawable.searchwhite);
         }
         // Initialize UI components
         pairedDevicesList = findViewById(R.id.listViewAvailable);

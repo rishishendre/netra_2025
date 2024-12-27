@@ -1,12 +1,21 @@
 package com.example.myapplication3;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.Shader;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,6 +39,7 @@ import java.util.Collections;
 import java.util.List;
 
 import yuku.ambilwarna.AmbilWarnaDialog;
+import yuku.ambilwarna.AmbilWarnaSquare;
 
 
 public class MainActivity2 extends CameraActivity {
@@ -53,11 +63,11 @@ public class MainActivity2 extends CameraActivity {
         lowerbondcolor = findViewById(R.id.lowerbondcolor);
         COMMAND = findViewById(R.id.textView);
         colorpicker = findViewById(R.id.button);
-        if (OpenCVLoader.initDebug()) {
+        if(OpenCVLoader.initDebug()){
             camera.enableView();
         }
         else{
-            System.out.println("Error IN OPEN CV");
+            Log.e("OPENCVLOAD", "onCreate: FAILED");
         }
         colorpicker.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +85,42 @@ public class MainActivity2 extends CameraActivity {
                         lowerbondcolor.setBackgroundColor(color);
                         }
                 });
-                colorpick.getDialog().getWindow().setBackgroundDrawableResource(R.color.theme);
+                colorpick.getDialog().setOnShowListener(dialog -> {
+                    AlertDialog alertDialog = (AlertDialog) dialog;
+                    Window window = alertDialog.getWindow();
+                    if(window!=null){
+                        WindowManager.LayoutParams layout = new WindowManager.LayoutParams();
+                        layout.copyFrom(window.getAttributes());
+                        layout.width = 1100;
+                        layout.height=600;
+                        window.setAttributes(layout);
+                    }
+                    Button okButton = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                    Button cancelButton = alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+                    if (okButton != null&&cancelButton!=null) {
+                        okButton.setTextColor(getResources().getColor(R.color.iconTint)); // Example color
+                        cancelButton.setTextColor(getResources().getColor(R.color.iconTint)); // Example color
+                    }
+                    View dialogView = alertDialog.findViewById(android.R.id.content);
+                    if (dialogView != null) {
+                        View colorpickerview = dialogView.findViewById(yuku.ambilwarna.R.id.ambilwarna_viewSatBri);
+                        View hueBar = dialogView.findViewById(yuku.ambilwarna.R.id.ambilwarna_viewHue);
+                        if(colorpickerview!=null){
+                            ViewGroup.LayoutParams para = colorpickerview.getLayoutParams();
+                            para.height=600;
+                            colorpickerview.setLayoutParams(para);
+                            colorpickerview.requestLayout();
+                            colorpickerview.invalidate();
+
+                        }
+                        if(hueBar!=null){
+                            ViewGroup.LayoutParams para = hueBar.getLayoutParams();
+                            para.height=600;
+                            hueBar.setLayoutParams(para);
+                        }
+                        dialogView.setBackgroundColor(getResources().getColor(R.color.theme)); // Example color
+                    }
+                });
                 colorpick.show();
             }
         });
@@ -165,8 +210,8 @@ public class MainActivity2 extends CameraActivity {
     private void getpermission() {
         if(checkSelfPermission(Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
             requestPermissions(new String[]{Manifest.permission.CAMERA},100);
+            recreate();
         }
-
     }
 
     @Override
@@ -180,6 +225,7 @@ public class MainActivity2 extends CameraActivity {
         if(grantResults.length>0&&grantResults[0]!=PackageManager.PERMISSION_GRANTED){
             getpermission();
         }
+
     }
 
     @Override

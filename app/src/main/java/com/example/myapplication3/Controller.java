@@ -118,14 +118,16 @@ public class Controller extends AppCompatActivity {
             Grip.setTextColor(Color.parseColor("#E6E3E3"));
             Ungrip.setTextColor(Color.parseColor("#E6E3E3"));
             joystickLib.setBorderColor(Color.BLACK);
-            joystickLib.setButtonColor(Color.BLACK);
-           }
+            joystickLib.setButtonColor(Color.WHITE);
+            Reconnect.setTextColor(Color.WHITE);
+        }
         else{
             Back.setTextColor(Color.BLACK);
             Grip.setTextColor(Color.BLACK);
             Ungrip.setTextColor(Color.BLACK);
             joystickLib.setBorderColor(Color.WHITE);
-            joystickLib.setButtonColor(Color.parseColor("#E6E3E3"));
+            joystickLib.setButtonColor(Color.BLACK);
+            Reconnect.setTextColor(Color.BLACK);
         }
         // Joystick movement handling
         Back.setOnClickListener(v -> {

@@ -38,8 +38,8 @@ public class OverlayView extends View {
         initPaints();
         bounds = new Rect();
 
-        int dpWidth = 371;
-        int dpHeight = 554;
+        int dpWidth = 700;
+        int dpHeight = 400;
 
         // Convert dp to px based on screen density
         float density = context.getResources().getDisplayMetrics().density;
@@ -132,6 +132,13 @@ public class OverlayView extends View {
         this.results = boundingBoxes;
         invalidate();
     }
+    public void clearBoundingBox() {
+        if (results!=null){
+            results.clear();
+        }
+        invalidate();
+    }
+
     float camerawidth = getWidth();
     float camerahieght = getHeight();
 

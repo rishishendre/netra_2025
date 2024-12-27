@@ -67,7 +67,7 @@ public class OBJfollowing extends AppCompatActivity implements Detector.Detector
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate  (savedInstanceState);
+        super.onCreate(savedInstanceState);
         binding = ActivityObjfollowingBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         Log.d(TAG, "Activity created and layout set.");
@@ -113,25 +113,26 @@ public class OBJfollowing extends AppCompatActivity implements Detector.Detector
             Log.e(TAG, "Camera initialization failed.");
             throw new IllegalStateException("Camera initialization failed.");
         }
+        Log.d(TAG,""+binding.viewFinder.getDisplay());
+        if (binding.viewFinder.getDisplay() != null) {
+            int rotation = binding.viewFinder.getDisplay().getRotation();
+            Log.d(TAG, "Display rotation: " + rotation);
 
-        int rotation = binding.viewFinder.getDisplay().getRotation();
-        Log.d(TAG, "Display rotation: " + rotation);
+            CameraSelector cameraSelector = new CameraSelector.Builder()
+                    .requireLensFacing(CameraSelector.LENS_FACING_BACK)
+                    .build();
 
-        CameraSelector cameraSelector = new CameraSelector.Builder()
-                .requireLensFacing(CameraSelector.LENS_FACING_BACK)
-                .build();
+            preview = new Preview.Builder()
+                    .setTargetAspectRatio(AspectRatio.RATIO_4_3)
+                    .setTargetRotation(rotation)
+                    .build();
 
-        preview = new Preview.Builder()
-                .setTargetAspectRatio(AspectRatio.RATIO_4_3)
-              .setTargetRotation(rotation)
-                .build();
-
-        imageAnalyzer = new ImageAnalysis.Builder()
-                .setTargetAspectRatio(AspectRatio.RATIO_4_3)
-                .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
-                .setTargetRotation(rotation)
-                .setOutputImageFormat(ImageAnalysis.OUTPUT_IMAGE_FORMAT_RGBA_8888)
-                .build();
+            imageAnalyzer = new ImageAnalysis.Builder()
+                    .setTargetAspectRatio(AspectRatio.RATIO_4_3)
+                    .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+                    .setTargetRotation(rotation)
+                    .setOutputImageFormat(ImageAnalysis.OUTPUT_IMAGE_FORMAT_RGBA_8888)
+                    .build();
 
         imageAnalyzer.setAnalyzer(cameraExecutor, imageProxy -> {
             Log.d(TAG, "Analyzing image...");
@@ -162,7 +163,7 @@ public class OBJfollowing extends AppCompatActivity implements Detector.Detector
             Log.e(TAG, "Use case binding failed", exc);
         }
     }
-
+}
     private boolean allPermissionsGranted() {
         for (String permission : new String[]{Manifest.permission.CAMERA}) {
             if (ContextCompat.checkSelfPermission(getBaseContext(), permission) != PackageManager.PERMISSION_GRANTED) {
@@ -196,7 +197,7 @@ public class OBJfollowing extends AppCompatActivity implements Detector.Detector
     protected void onResume() {
         super.onResume();
         Log.d(TAG, "Resuming activity...");
-        if (allPermissionsGranted()) {
+        if (allPermissionsGranted()&&binding.viewFinder.getDisplay()!=null) {
             try {
                 startCamera();
             } catch (Exception e) {
@@ -239,6 +240,17 @@ public class OBJfollowing extends AppCompatActivity implements Detector.Detector
             detectedObj.append(obj);
         }
 
+
+    }
+    @Override
+    public void onNodetect(){
+
+        runOnUiThread(() -> {
+
+            binding.Command.setText(BluetoothSingleton.getInstance().getCommand());
+            binding.overlay.clearBoundingBox();
+            binding.overlay.invalidate();
+        });
 
     }
 

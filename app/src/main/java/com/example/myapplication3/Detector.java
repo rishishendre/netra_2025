@@ -121,6 +121,10 @@ public class Detector {
         inferenceTime = SystemClock.uptimeMillis() - inferenceTime;
 
         if (finalBoxes == null || finalBoxes.isEmpty()) {
+            BluetoothSingleton.getInstance().sendData("S");
+            BluetoothSingleton.getInstance().setCommand("S");
+            detectorListener.onNodetect();
+
             detectorListener.onEmptyDetect();
         } else {
             detectorListener.onDetect(finalBoxes, inferenceTime);
@@ -221,13 +225,15 @@ public class Detector {
         float screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
 
         void onDetect(List<BoundingBox> boundingBoxes, long inferenceTime);
+
+        void onNodetect();
     }
 
     private static final float INPUT_MEAN = 0f;
     private static final float INPUT_STANDARD_DEVIATION = 255f;
     private static final DataType INPUT_IMAGE_TYPE = DataType.FLOAT32;
     private static final DataType OUTPUT_IMAGE_TYPE = DataType.FLOAT32;
-    private static final float CONFIDENCE_THRESHOLD = 0.5F;
+    private static final float CONFIDENCE_THRESHOLD = 0.75F;
     private static final float IOU_THRESHOLD = 0.35F;
 
 

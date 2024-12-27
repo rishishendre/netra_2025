@@ -11,10 +11,12 @@
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="100dp"
         android:layout_marginTop="450dp"
+        android:layout_marginBottom="100dp"
         android:gravity="center"
-        android:text="Click on camera icon"
+        android:isScrollContainer="true"
+        android:scrollIndicators="top"
+        android:text=""
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,20 +52,19 @@
 
     <Button
         android:id="@+id/Camera"
-        android:layout_width="89dp"
-        android:layout_height="79dp"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
         android:backgroundTint="#62825D"
-        android:foregroundGravity="center"
-        android:gravity="center"
+        android:text="Camera"
+        android:textColor="#E6E3E3"
         app:cornerRadius="10dp"
-        app:icon="@drawable/camerablack"
-        app:iconGravity="textStart"
-        app:iconPadding="0dp"
-        app:iconSize="40dp"
+        app:icon="@drawable/cameraicon"
         app:iconTint="@color/iconTint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
+        app:layout_constraintVertical_bias="0.962" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
